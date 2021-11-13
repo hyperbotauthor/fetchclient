@@ -1,0 +1,26 @@
+<script src="dist/index.iife.js"></script>
+
+<script>
+  const lichessClient = new fetchclient.FetchClient(window.fetch.bind(window), {
+  apiBaseUrl: 'https://lichess.org/api',  
+  });
+
+  const gamesOfUser = lichessClient.extend('games/user', {
+    headers: {
+      Accept: 'application/x-ndjson',
+    },
+  });
+
+  async function test() {const games = await gamesOfUser.fetchNdJson("hyperchessbotauthor", {
+      urlParams: {
+        max: 10,
+      },
+    });
+
+    console.log(games.map((game) => new fetchclient.lichess.ParsedGame(game, "hyperchessbotauthor")));
+  }
+
+  console.log("test")
+
+  test();
+</script>

@@ -1,0 +1,39 @@
+{
+  "name": "@publishvue/fetchclient",
+  "version": "1.0.10",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "contributors": [
+    "hyperbotauthor <hyperchessbotauthor@gmail.com>"
+  ],
+  "description": "fetchclient",
+  "keywords": [
+    "fetchclient"
+  ],
+  "repository": "https://github.com/hyperbotauthor/fetchclient",
+  "homepage": "https://github.com/hyperbotauthor/fetchclient#fetchclient",
+  "bugs": {
+    "url": "https://github.com/hyperbotauthor/fetchclient/issues",
+    "email": "hyperchessbotauthor@gmail.com"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^21.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.5",
+    "http-server": "^13.0.2",
+    "node-fetch": "^2.6.5",
+    "parse-git-config": "^3.0.0",
+    "prettier": "^2.4.1",
+    "query-string": "^7.0.1",
+    "rollup": "^2.58.0",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "tslib": "^2.3.1",
+    "typescript": "^4.4.4"
+  },
+  "scripts": {
+    "serve": "http-server",
+    "clean": "rm -r dist",
+    "dev": "rollup --config --watch",
+    "prep": "prettier -w src && rollup --config"
+  },
+  "dependencies": {}
+}
